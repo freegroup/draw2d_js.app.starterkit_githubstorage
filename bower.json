@@ -1,0 +1,13 @@
+{
+  "name": "draw2d_js.app.starterkit_simple",
+  "version": "0.0.1",
+  "homepage": "https://github.com/freegroup/draw2d_js.app.starterkit_simple",
+  "authors": [
+    "Andreas Herz <FreeGroup>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "draw2d": "~5.5.2",
+    "jquery.browser": "~0.0.7"
+  }
+}
