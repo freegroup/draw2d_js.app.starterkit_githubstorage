@@ -1,16 +1,19 @@
 * {
   box-sizing: border-box;
 }
+
 .header-panel {
   background-color: #009587;
   height: 144px;
   position: relative;
   z-index: 3;
 }
+
 .header-panel div {
   position: relative;
   height: 100%;
 }
+
 .header-panel h1 {
   color: #FFF;
   font-size: 20px;
@@ -19,12 +22,13 @@
   bottom: 10px;
   padding-left: 35px;
 }
+
+
 .menu {
   overflow: auto;
   padding: 0;
 }
-.menu,
-.menu * {
+.menu, .menu * {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -45,15 +49,20 @@
   position: relative;
 }
 .menu ul li a {
-  color: #333333;
+  color: rgb(51, 51, 51);
   text-decoration: none;
 }
+
 .pages {
   position: absolute;
-  top: 50px;
+  top: 0;
   right: 0;
   z-index: 4;
   padding: 0;
   overflow: auto;
-  background-color:#f0f0f0;
 }
+.pages > div {
+  padding: 0 5px;
+  padding-top: 64px;
+}
+

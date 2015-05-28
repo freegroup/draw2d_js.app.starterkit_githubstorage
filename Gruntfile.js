@@ -10,13 +10,13 @@ module.exports = function (grunt) {
         // Task configuration
         concat: {
             options: {
-                separator: ';'
+                separator: '\n'
             },
             libs: {
                 src: [
                     './bower_components/shifty/dist/shifty.min.js',
                     './bower_components/draw2d/dist/patched_raphael.js',
-                    './bower_components/jquery/jquery.min.js',
+                    './bower_components/jquery/dist/jquery.min.js',
                     './bower_components/draw2d/dist/jquery.autoresize.js',
                     './bower_components/draw2d/dist/jquery-touch_punch.js',
                     './bower_components/draw2d/dist/jquery.contextmenu.js',
@@ -43,16 +43,28 @@ module.exports = function (grunt) {
                 cwd: 'src/',
                 src: '**/*.html',
                 dest: 'dist/'
+            },
+            material:{
+                expand: true,
+                cwd: 'bower_components/bootstrap-material-design/dist/',
+                src: ['**/*'],
+                dest: './dist/lib/material'
+            },
+            material:{
+                expand: true,
+                cwd: 'bower_components/bootstrap/dist/',
+                src: ['**/*'],
+                dest: './dist/lib/bootstrap'
             }
-        },
 
+        },
         less: {
             development: {
                 options: {
                     compress: false
                 },
                 files: {
-                    "./dist/assets/stylesheets/main.css": "./src/assets/stylesheets/main.less"
+                    "./dist/assets/stylesheets/main.css": "./src/assets/less/main.less"
                 }
             }
         },
@@ -77,12 +89,20 @@ module.exports = function (grunt) {
                     livereload: true
                 }
             },
-
-            less: {
+            html: {
                 files: [
-                    "./src/assets/stylesheets/**/*.less"
+                    "./src/assets/less/**/*.less"
                 ],
                 tasks: ['less'],
+                options: {
+                    livereload: true
+                }
+            },
+            less: {
+                files: [
+                    "./src/**/*.html"
+                ],
+                tasks: ['copy'],
                 options: {
                     livereload: true
                 }

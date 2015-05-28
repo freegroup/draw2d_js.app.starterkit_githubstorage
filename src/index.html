@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
     <title></title>
@@ -5,12 +6,29 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
+    <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./lib/material/css/roboto.min.css" rel="stylesheet">
+    <link href="./lib/material/css/material-fullpalette.min.css" rel="stylesheet">
+    <link href="./lib/material/css/ripples.min.css" rel="stylesheet">
+    <link href="./assets/stylesheets/main.css" rel="stylesheet">
+
+
     <SCRIPT src="./assets/javascript/dependencies.js"></SCRIPT>
     <SCRIPT src="./assets/javascript/app.js"></SCRIPT>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/material/js/material.min.js"></script>
+    <script src="./lib/material/js/ripples.min.js"></script>
+
 
     <script type="text/javascript">
 
         $(window).load(function () {
+            $.material.init();
+            $(window).on("resize", function() {
+                $("html, body").height($(window).height());
+                $(".main, .menu").height($(window).height() - $(".header-panel").outerHeight());
+                $(".pages").height($(window).height()-50);
+            }).trigger("resize");
 
 
             var canvas = new draw2d.Canvas("gfx_holder");
@@ -31,8 +49,70 @@
 </head>
 
 <body>
-<div  onselectstart="javascript:/*IE8 hack*/return false" id="gfx_holder" style="width:1500px; height:1500px;">
+
+<div class="header-panel shadow-z-2">
+    <div class="container-fluid">
+        <div class="row">
+            <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#complete-dialog">Open dialog</button>
+
+            <div class="col-xs-3">
+                <h1>Pages</h1>
+            </div>
+        </div>
+    </div>
 </div>
+<div class="container-fluid main" >
+    <div class="row">
+        <nav class="col-xs-3 menu" style="height: 251px;">
+            <ul>
+                <li class="withripple" data-target="#slider">Slider</li>
+                <li class="withripple">Tabs (To do)</li>
+                <li class="withripple" data-target="#button">Button</li>
+                <li class="withripple">Icon button (To do)</li>
+                <li class="withripple" data-target="#floating-action-button">Floating Action Button</li>
+                <li class="withripple" data-target="#dropdown">Dropdown (Work in progress)</li>
+                <li class="withripple" data-target="#dropdown-menu">Dropdown Menu</li>
+                <li class="withripple" data-target="#dialog">Dialog</li>
+                <li class="withripple" data-target="#shadow">Shadow</li>
+            </ul>
+        </nav>
+        <div class="pages col-xs-9 shadow-z-2" id="canvas_container" style="height: 395px;">
+            <div  onselectstart="javascript:/*IE8 hack*/return false" id="gfx_holder" style="width:1500px; height:1500px;">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="complete-dialog" class="modal  fade" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">GitHub Token</h4>
+            </div>
+            <div class="modal-body">
+
+                <form>
+                    <input type="text" name="github-token" id="github-token">
+                </form>
+                <p>Get a <a href="https://github.com/settings/tokens" target="_blank">github token</a>.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal">Connect</button>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    #dialog h2 {
+        padding: 14px;
+        margin: 0;
+        font-size: 16px;
+        font-weight: 400;
+    }
+</style>
 
 
 </body>

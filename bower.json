@@ -8,6 +8,11 @@
   "license": "MIT",
   "dependencies": {
     "draw2d": "~5.5.2",
-    "jquery.browser": "~0.0.7"
+    "octokat": "~0.4.10",
+    "bootstrap-material-design": "~0.3.0",
+    "bootstrap": "~3.3.4"
+  },
+  "resolutions": {
+    "jquery": "~2.1.1"
   }
 }
