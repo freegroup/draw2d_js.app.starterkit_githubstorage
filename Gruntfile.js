@@ -50,7 +50,7 @@ module.exports = function (grunt) {
                 src: ['**/*'],
                 dest: './dist/lib/material'
             },
-            material:{
+            bootstrap:{
                 expand: true,
                 cwd: 'bower_components/bootstrap/dist/',
                 src: ['**/*'],
