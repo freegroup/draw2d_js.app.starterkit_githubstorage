@@ -1,10 +1,59 @@
-body {
-  background: #cc594a;
-  color: #b8cc24;
+* {
+  box-sizing: border-box;
 }
-button {
-  background: #8bc5ff;
+.header-panel {
+  background-color: #009587;
+  height: 144px;
+  position: relative;
+  z-index: 3;
 }
-div {
-  background: #6f3596;
+.header-panel div {
+  position: relative;
+  height: 100%;
+}
+.header-panel h1 {
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  bottom: 10px;
+  padding-left: 35px;
+}
+.menu {
+  overflow: auto;
+  padding: 0;
+}
+.menu,
+.menu * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.menu ul {
+  padding: 0;
+  margin: 7px 0;
+}
+.menu ul li {
+  list-style: none;
+  padding: 20px 0 20px 50px;
+  font-size: 15px;
+  font-weight: normal;
+  cursor: pointer;
+}
+.menu ul li.active {
+  background-color: #dedede;
+  position: relative;
+}
+.menu ul li a {
+  color: #333333;
+  text-decoration: none;
+}
+.pages {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  z-index: 4;
+  padding: 0;
+  overflow: auto;
+  background-color: #f0f0f0;
 }
