@@ -25,15 +25,19 @@ module.exports = function (grunt) {
                     './bower_components/draw2d/dist/patched_Class.js',
                     './bower_components/draw2d/dist/json2.js',
                     './bower_components/draw2d/dist/pathfinding-browser.min.js',
-                    './bower_components/draw2d/dist/draw2d.js'
+                    './bower_components/draw2d/dist/draw2d.js',
+                    './bower_components/octokat/dist/octokat.js',
+                    './bower_components/hogan/web/1.0.0/hogan.min.js'
                 ],
-                dest: './dist/assets/javascript/dependencies.js'
+                dest: './dist/assets/javascript/dependencies.js',
+                nonull: true
             },
             application: {
                 src: [
-                    './assets/javascript/main.js'
+                    './src/assets/javascript/main.js'
                 ],
-                dest: './dist/assets/javascript/app.js'
+                dest: './dist/assets/javascript/app.js',
+                nonull: true
             }
         },
 
@@ -84,7 +88,7 @@ module.exports = function (grunt) {
                 files: [
                     './src/assets/javascript/**/*.js'
                 ],
-                tasks: ['concat:appliction'],
+                tasks: ['concat:application'],
                 options: {
                     livereload: true
                 }
