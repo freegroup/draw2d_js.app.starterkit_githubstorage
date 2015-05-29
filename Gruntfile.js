@@ -34,6 +34,7 @@ module.exports = function (grunt) {
             },
             application: {
                 src: [
+                    './src/assets/javascript/util.js',
                     './src/assets/javascript/main.js'
                 ],
                 dest: './dist/assets/javascript/app.js',
@@ -45,7 +46,7 @@ module.exports = function (grunt) {
             application: {
                 expand: true,
                 cwd: 'src/',
-                src: '**/*.html',
+                src: ['**/*.html', '**/*.png'],
                 dest: 'dist/'
             },
             material:{

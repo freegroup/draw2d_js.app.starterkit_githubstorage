@@ -57,3 +57,8 @@
   overflow: auto;
   background-color: #f0f0f0;
 }
+#splash {
+  width: 660px;
+  height: 540px;
+  background-image: url(../images/splash.png);
+}

@@ -1,9 +1,3 @@
-var octo=null;
-var repositories = null;
-var githubToken = null;
-var currentRepository = null;
-var currentPath = "";
-
 if(typeof String.prototype.endsWith ==="undefined") {
     String.prototype.endsWith = function (suffix) {
         return this.indexOf(suffix, this.length - suffix.length) !== -1;
@@ -11,16 +5,36 @@ if(typeof String.prototype.endsWith ==="undefined") {
 }
 
 function dirname(path) {
-  if(path.length===0)
-    return "";
+    if(path.length===0)
+        return "";
 
-  var segments = path.split("/");
-  if(segments.length<=1)
-     return "";
-  return segments.slice(0,-1).join("/");
+    var segments = path.split("/");
+    if(segments.length<=1)
+        return "";
+    return segments.slice(0,-1).join("/");
 }
 
+
+
+// you are right - public vars are ugly...
+//
+var octo=null;
+var repositories = null;
+var githubToken = null;
+var currentRepository = null;
+var currentPath = "";
+var currentSHA= null;
+var canvas = null;
+
 function initApp(){
+    $('#splashDialog').modal('show');
+
+    $(window).on("resize", function () {
+        $("html, body").height($(window).height());
+        $(".main, .menu").height($(window).height() - $(".header-panel").outerHeight());
+        $(".pages").height($(window).height() - 50);
+    }).trigger("resize");
+
 
     $("#connectToGithub").on("click",function(){
         githubToken = $("#githubToken").val();
@@ -30,9 +44,31 @@ function initApp(){
         });
 
         fetchRepositories();
-     });
+        $('#githubConnectDialog').modal('hide');
 
-    var canvas = new draw2d.Canvas("gfx_holder");
+    });
+
+    $("#commitToGithub").on("click",function(){
+        var writer = new draw2d.io.json.Writer();
+        writer.marshal(canvas,function(json, base64){
+            var config = {
+                message: $("#githubCommitMessage").val(),
+                content: base64,
+                sha: currentSHA
+            };
+
+            currentRepository.contents(currentPath).add(config)
+                .then(function(info) {
+                    currentSHA=  info.content.sha;
+                    console.log(info);
+                    $('#githubCommitDialog').modal('hide');
+            });
+        });
+
+    });
+
+
+    canvas = new draw2d.Canvas("gfx_holder");
 
     canvas.add( new draw2d.shape.basic.Oval(),100,100);
     canvas.add( new draw2d.shape.basic.Rectangle(),120,150);
@@ -60,19 +96,22 @@ function fetchPathContent( newPath ){
                 return 0;
             }
             if(a.type==="dir"){
-                return -1
+                return -1;
             }
             return 1;
         });
 
         currentPath = newPath;
         var compiled = Hogan.compile(
-            '         <li class="githubPath withripple" data-type="{{parentType}}" data-path="{{parentPath}}" >..</li>'+
+            '         <a href="#" class="list-group-item githubPath withripple" data-type="{{parentType}}" data-path="{{parentPath}}" >'+
+            '             <small><span class="glyphicon mdi-navigation-arrow-back"></span></small>'+
+            '             ..'+
+            '         </a>'+
             '         {{#files}}'+
-            '         <li class="githubPath withripple text-nowrap" data-type="{{type}}" data-path="{{currentPath}}{{name}}" data-id="{{id}}">'+
-            '                <small><span class="glyphicon {{icon}}"></span></small>'+
-            '                {{{name}}}'+
-            '         </li>'+
+            '           <a href="#" class="list-group-item githubPath withripple text-nowrap" data-type="{{type}}" data-path="{{currentPath}}{{name}}" data-id="{{id}}" data-sha="{{sha}}">'+
+            '              <small><span class="glyphicon {{icon}}"></span></small>'+
+            '              {{{name}}}'+
+            '           </a>'+
             '         {{/files}}'
         );
 
@@ -96,10 +135,17 @@ function fetchPathContent( newPath ){
         $(".githubPath[data-type='repository']").on("click", function(){
             fetchRepositories();
         });
-        $(".githubPath[data-type!='repository']").on("click", function(){
+        $(".githubPath[data-type='dir']").on("click", function(){
             fetchPathContent( $(this).data("path"));
         });
-    })
+        $(".githubPath[data-type='file']").on("click", function(){
+            currentPath =  $(this).data("path");
+            currentSHA  =  $(this).data("sha");
+            currentRepository.contents(currentPath).read(function(param, content){
+                loadContent(content);
+            });
+        });
+    });
 }
 
 function fetchRepositories(){
@@ -118,10 +164,10 @@ function fetchRepositories(){
         repositories = repos;
         var compiled = Hogan.compile(
             '         {{#repos}}'+
-            '         <li class="repository withripple text-nowrap" data-type="repository" data-path="{{currentPath}}" data-id="{{id}}">'+
+            '         <a href="#" class="list-group-item repository withripple text-nowrap" data-type="repository" data-path="{{currentPath}}" data-id="{{id}}">'+
             '         <small><span class="glyphicon mdi-content-archive"></span></small>'+
             '         {{{name}}}'+
-            '         </li>'+
+            '         </a>'+
             '         {{/repos}}'
         );
 
@@ -132,7 +178,6 @@ function fetchRepositories(){
         $("#githubNavigation").html($(output));
         $.material.init();
 
-        $('#githubConnectDialog').modal('hide');
 
         $(".repository").on("click", function(){
             var $this = $(this);
@@ -143,3 +188,18 @@ function fetchRepositories(){
     });
 
 }
+
+
+function loadContent(jsonString){
+    console.log(currentSHA);
+    canvas.clear();
+    var reader = new draw2d.io.json.Reader();
+    reader.unmarshal(canvas, jsonString);
+    canvas.getCommandStack().markSaveLocation();
+}
+
+
+
+
+
+

@@ -23,14 +23,6 @@
     <script type="text/javascript">
 
         $(window).load(function () {
-
-            $(window).on("resize", function () {
-                $("html, body").height($(window).height());
-                $(".main, .menu").height($(window).height() - $(".header-panel").outerHeight());
-                $(".pages").height($(window).height() - 50);
-            }).trigger("resize");
-
-
             initApp();
         });
 
@@ -40,34 +32,43 @@
 
 <body>
 
+<!--
+  # HEADER
+  # The header contains the toolbar and the name of the loaded file
+  #
+ -->
 <div class="header-panel shadow-z-2">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-3">
                 <h1>Files</h1>
             </div>
+            <div class="col-xs-9">
+                <button class="btn btn-info btn-raised" data-toggle="modal" data-target="#githubCommitDialog"
+                        id="githubButtonSave">Save
+                </button>
+            </div>
         </div>
     </div>
 </div>
+
+
+<!--
+  # Content Area
+  #
+  #
+-->
 <div class="container-fluid main">
     <div class="row">
         <nav class="col-xs-3 menu">
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Library1</a></li>
-                <li><a href="#">Library2</a></li>
-                <li><a href="#">Library3</a></li>
-                <li><a href="#">Library4</a></li>
-                <li><a href="#">Library5</a></li>
-                <li><a href="#">Library6</a></li>
-                <li class="active">Data</li>
-            </ol>
-
-            <ul id="githubNavigation">
-                <li>
-                    <button class="btn" data-toggle="modal" data-target="#githubConnectDialog">Connect to Github.. </button>
-                </li>
-            </ul>
+            <div class="list-group" id="githubNavigation">
+                <div class="text-center">
+                    <button class="btn" data-toggle="modal" data-target="#githubConnectDialog">
+                        <img src="assets/images/octocat.png"><br>
+                        Connect to Github..
+                    </button>
+                    </div>
+            </div>
         </nav>
         <div class="pages col-xs-9 shadow-z-2" id="canvas_container" style="height: 395px;">
             <div onselectstart="javascript:/*IE8 hack*/return false" id="gfx_holder"
@@ -75,41 +76,54 @@
             </div>
         </div>
     </div>
-
 </div>
 
 
+<!--
+  # Connect to GITHUB Dialog template
+  #
+  #
+-->
 <div id="githubConnectDialog" class="modal fade" tabindex="-1">
     <div class="modal-dialog ">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">Connect to GitHub</h4>
             </div>
             <div class="modal-body">
-
-                <form class="form-horizontal">
-                    <br>
-                    <br>
-                    <fieldset>
-                        <div class="form-group">
-                            <div class="col-lg-12">
-                                <input type="text"
-                                       class="form-control floating-label"
-                                       id="githubToken"
-                                       value=""
-                                       placeholder="Paste your token here.."
-                                       data-hint="you can always revoke the token in your github settings">
-                            </div>
-                        </div>
-                    </fieldset>
-                    <div class="row"></div>
-                    <div class="row">
-                        <div class="col-md-8"></div>
-                        <small class="col-md-4 text-right">Get a <a href="https://github.com/settings/tokens"
-                                                                    target="_blank">github token</a></small>
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a href="#">
+                            <img class="media-object" src="assets/images/octocat.png">
+                        </a>
                     </div>
-                </form>
+                    <div class="media-body">
+                        <h4 class="media-heading">Connect to GitHub</h4>
+
+                        <form class="form-horizontal">
+                            <br>
+                            <br>
+                            <fieldset>
+                                <div class="form-group">
+                                    <div class="col-lg-12">
+                                        <input type="text"
+                                               class="form-control floating-label"
+                                               id="githubToken"
+                                               value=""
+                                               placeholder="Paste your token here.."
+                                               data-hint="you can always revoke the token in your github settings">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div class="row"></div>
+                            <div class="row">
+                                <div class="col-md-8"></div>
+                                <small class="col-md-4 text-right">
+                                    Get a <a href="https://github.com/settings/tokens" target="_blank">github token</a>
+                                </small>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button class="btn" data-dismiss="modal">Abort</button>
@@ -118,15 +132,60 @@
         </div>
     </div>
 </div>
-<style>
-    #dialog h2 {
-        padding: 14px;
-        margin: 0;
-        font-size: 16px;
-        font-weight: 400;
-    }
-</style>
 
 
+<!--
+  # Commit to GITHUB dialog template
+  #
+  #
+-->
+<div id="githubCommitDialog" class="modal fade" tabindex="-1">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a href="#">
+                            <img class="media-object" src="assets/images/octocat.png">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Commit changes to GitHub</h4>
+
+                        <form class="form-horizontal">
+                            <br>
+                            <br>
+                            <fieldset>
+                                <div class="form-group">
+                                    <div class="col-lg-12">
+                                        <input type="text" class="form-control floating-label" value="" id="githubCommitMessage"  placeholder="Commit message">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div class="row"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal">Abort</button>
+                <button class="btn btn-primary" id="commitToGithub">Commit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+  # Commit to GITHUB dialog template
+  #
+  #
+-->
+<div id="splashDialog" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg  shadow-z-2"  id="splash">
+    </div>
+</div>
 </body>
 </html>
