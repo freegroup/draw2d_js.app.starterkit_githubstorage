@@ -15,7 +15,7 @@
         "id": "02632ab3-4b92-707b-0ba4-f76a4ebf5423",
         "width": 10,
         "height": 10,
-        "alpha": 1,
+        "alpha": 0,
         "userData": {},
         "cssClass": "draw2d_OutputPort",
         "bgColor": "#FF9100",
@@ -48,7 +48,7 @@
         "id": "5fc4c7ec-89c0-e780-9ee5-2416b12bec67",
         "width": 10,
         "height": 10,
-        "alpha": 1,
+        "alpha": 0,
         "userData": {},
         "cssClass": "draw2d_InputPort",
         "bgColor": "#FF9100",
@@ -61,6 +61,39 @@
       }
     ],
     "bgColor": "#E0E0E0",
+    "color": "#000000",
+    "stroke": 1,
+    "radius": 0
+  },
+  {
+    "type": "draw2d.shape.node.Start",
+    "id": "b80dc59f-96f4-cb36-3ebb-4e42bd9ec36b",
+    "x": 125.5,
+    "y": 285,
+    "width": 50,
+    "height": 50,
+    "alpha": 1,
+    "userData": {},
+    "cssClass": "draw2d_shape_node_Start",
+    "ports": [
+      {
+        "type": "draw2d.OutputPort",
+        "id": "6e24613b-07a7-0e82-c9f7-561fb2e2c0cd",
+        "width": 10,
+        "height": 10,
+        "alpha": 0,
+        "userData": {},
+        "cssClass": "draw2d_OutputPort",
+        "bgColor": "#FF9100",
+        "color": "#1B1B1B",
+        "stroke": 0,
+        "maxFanOut": 1.7976931348623157e+308,
+        "name": "output0",
+        "port": "draw2d.OutputPort",
+        "locator": "draw2d.layout.locator.OutputPortLocator"
+      }
+    ],
+    "bgColor": "#F06292",
     "color": "#000000",
     "stroke": 1,
     "radius": 0
