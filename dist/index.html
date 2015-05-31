@@ -10,23 +10,14 @@
     <link href="./lib/material/css/roboto.min.css" rel="stylesheet">
     <link href="./lib/material/css/material-fullpalette.min.css" rel="stylesheet">
     <link href="./lib/material/css/ripples.min.css" rel="stylesheet">
+    <link href="./assets/stylesheets/dependencies.css" rel="stylesheet">
     <link href="./assets/stylesheets/main.css" rel="stylesheet">
 
 
     <SCRIPT src="./assets/javascript/dependencies.js"></SCRIPT>
     <SCRIPT src="./assets/javascript/app.js"></SCRIPT>
-    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="./lib/material/js/material.min.js"></script>
     <script src="./lib/material/js/ripples.min.js"></script>
-
-
-    <script type="text/javascript">
-
-        $(window).load(function () {
-            initApp();
-        });
-
-    </script>
 
 </head>
 
@@ -41,11 +32,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-3">
-                <h1>Files</h1>
+                <img id="logo" src="assets/images/logo.png">
             </div>
             <div class="col-xs-9">
-                <button class="btn btn-info btn-raised" data-toggle="modal" data-target="#githubCommitDialog"
-                        id="githubButtonSave">Save
+                <button class="btn btn-info btn-raised"  style="display:none" data-toggle="modal" data-target="#githubCommitDialog" id="githubCommmitButton">
+                    <span>Commit</span>
                 </button>
             </div>
         </div>
@@ -59,22 +50,47 @@
   #
 -->
 <div class="container-fluid main">
-    <div class="row">
+
+    <div class="row ">
+
         <nav class="col-xs-3 menu">
             <div class="list-group" id="githubNavigation">
                 <div class="text-center">
-                    <button class="btn" data-toggle="modal" data-target="#githubConnectDialog">
+                    <button class="btn" data-toggle="modal" data-target="#githubConnectDialog" id="githubButton">
                         <img src="assets/images/octocat.png"><br>
-                        Connect to Github..
+                        Connect to Github to <br>
+                        save and load files..
                     </button>
                     </div>
             </div>
         </nav>
-        <div class="pages col-xs-9 shadow-z-2" id="canvas_container" style="height: 395px;">
-            <div onselectstart="javascript:/*IE8 hack*/return false" id="gfx_holder"
-                 style="width:1500px; height:1500px;">
+
+        <div class="pages col-xs-9 shadow-z-2 ">
+
+
+            <div class="navbar navbar-warning navbar-fixed-top" id="draw2dObjectPalette">
+                <div class="container shadow-z-1">
+                    <div class="navbar-collapse collapse navbar-responsive-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><img src="./assets/images/source.png"  data-shape="draw2d.shape.node.Start"    class="palette_node_element draw2d_droppable"></li>
+                            <li><img src="./assets/images/pipe.png"    data-shape="draw2d.shape.node.Between"  class="palette_node_element draw2d_droppable"></li>
+                            <li><img src="./assets/images/sink.png"    data-shape="draw2d.shape.node.End"      class="palette_node_element draw2d_droppable"></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+
+
+            <div onselectstart="javascript:/*IE8 hack*/return false" id="gfx_holder"  style="width:1500px; height:1500px;">
+            </div>
+
         </div>
+
+        <button class="btn btn-fab btn-raised btn-material-red" data-toggle="modal" data-target="#githubNewFileDialog" id="newFileButton">
+            <i class="mdi-content-add"></i>
+        </button>
+
+
     </div>
 </div>
 
@@ -127,7 +143,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn" data-dismiss="modal">Abort</button>
-                <button class="btn btn-primary" id="connectToGithub">Connect</button>
+                <button class="btn btn-primary" id="connectToGithub"><span>Connect</span></button>
             </div>
         </div>
     </div>
@@ -180,6 +196,49 @@
 
 <!--
   # Commit to GITHUB dialog template
+  #
+  #
+-->
+<div id="githubNewFileDialog" class="modal fade" tabindex="-1">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a href="#">
+                            <img class="media-object" src="assets/images/octocat.png">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Create new file on GitHub</h4>
+
+                        <form class="form-horizontal">
+                            <br>
+                            <br>
+                            <fieldset>
+                                <div class="form-group">
+                                    <div class="col-lg-12">
+                                        <input type="text" class="form-control floating-label" value="" id="githubFileName"  placeholder="File Name">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div class="row"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal">Abort</button>
+                <button class="btn btn-primary" id="createOnGithub">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+  # Splash Screen
   #
   #
 -->

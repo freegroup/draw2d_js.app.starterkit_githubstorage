@@ -17,6 +17,8 @@ module.exports = function (grunt) {
                     './bower_components/shifty/dist/shifty.min.js',
                     './bower_components/draw2d/dist/patched_raphael.js',
                     './bower_components/jquery/dist/jquery.min.js',
+                    './bower_components/jquery-ui/jquery-ui.min.js',
+                    './bower_components/bootstrap/dist/js/bootstrap.min.js',
                     './bower_components/draw2d/dist/jquery.autoresize.js',
                     './bower_components/draw2d/dist/jquery-touch_punch.js',
                     './bower_components/draw2d/dist/jquery.contextmenu.js',
@@ -32,9 +34,17 @@ module.exports = function (grunt) {
                 dest: './dist/assets/javascript/dependencies.js',
                 nonull: true
             },
+            css: {
+                src: [
+                ],
+                dest: './dist/assets/stylesheets/dependencies.css',
+                nonull: true
+            },
             application: {
                 src: [
+                    './src/assets/javascript/colors.js',
                     './src/assets/javascript/util.js',
+                    './src/assets/javascript/RubberConnection.js',
                     './src/assets/javascript/main.js'
                 ],
                 dest: './dist/assets/javascript/app.js',

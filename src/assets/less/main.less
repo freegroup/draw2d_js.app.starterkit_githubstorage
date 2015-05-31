@@ -1,3 +1,5 @@
+@canvasMarginTop : 70px;
+
 * {
   box-sizing: border-box;
 }
@@ -28,34 +30,10 @@
   overflow: auto;
   padding: 0;
 }
-.menu, .menu * {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-.menu ul {
-  padding: 0;
-  margin: 7px 0;
-}
-.menu ul li {
-  list-style: none;
-  padding: 20px 0 20px 50px;
-  font-size: 15px;
-  font-weight: normal;
-  cursor: pointer;
-}
-.menu ul li.active {
-  background-color: #dedede;
-  position: relative;
-}
-.menu ul li a {
-  color: rgb(51, 51, 51);
-  text-decoration: none;
-}
 
 .pages {
   position: absolute;
-  top: 50px;
+  top: @canvasMarginTop;
   right: 0;
   z-index: 4;
   padding: 0;
@@ -70,3 +48,33 @@
   background-image: url(../images/splash.png);
 }
 
+
+#newFileButton{
+  z-index: 10000;
+  position: absolute;
+  top:  @canvasMarginTop - 30px;
+  right: 25px;
+  display:none;
+}
+
+
+#draw2dObjectPalette{
+  margin-left:25%;
+  top:@canvasMarginTop;
+}
+
+
+.palette_node_element{
+  height:60px;
+  cursor:move;
+  margin-right:30px;
+}
+
+#logo{
+  margin-top: 10px;
+  margin-left: 10%;
+}
+
+#githubButton{
+  margin-top:100px;
+}

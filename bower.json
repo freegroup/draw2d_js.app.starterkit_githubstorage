@@ -7,11 +7,12 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "draw2d": "~5.5.2",
+    "draw2d": "~5.5.3",
     "octokat": "~0.4.10",
     "bootstrap-material-design": "~0.3.0",
     "bootstrap": "~3.3.4",
-    "hogan": "~3.0.2"
+    "hogan": "~3.0.2",
+    "jquery-ui": "~1.11.4"
   },
   "resolutions": {
     "jquery": "~2.1.1"
