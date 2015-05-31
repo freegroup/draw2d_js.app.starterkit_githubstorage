@@ -23,37 +23,40 @@
   overflow: auto;
   padding: 0;
 }
-.menu,
-.menu * {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-.menu ul {
-  padding: 0;
-  margin: 7px 0;
-}
-.menu ul li {
-  list-style: none;
-  padding: 20px 0 20px 50px;
-  font-size: 15px;
-  font-weight: normal;
-  cursor: pointer;
-}
-.menu ul li.active {
-  background-color: #dedede;
-  position: relative;
-}
-.menu ul li a {
-  color: #333333;
-  text-decoration: none;
-}
 .pages {
   position: absolute;
-  top: 50px;
+  top: 70px;
   right: 0;
   z-index: 4;
   padding: 0;
   overflow: auto;
   background-color: #f0f0f0;
+}
+#splash {
+  width: 660px;
+  height: 540px;
+  background-image: url(../images/splash.png);
+}
+#newFileButton {
+  z-index: 10000;
+  position: absolute;
+  top: 40px;
+  right: 25px;
+  display: none;
+}
+#draw2dObjectPalette {
+  margin-left: 25%;
+  top: 70px;
+}
+.palette_node_element {
+  height: 60px;
+  cursor: move;
+  margin-right: 30px;
+}
+#logo {
+  margin-top: 10px;
+  margin-left: 10%;
+}
+#githubButton {
+  margin-top: 100px;
 }
