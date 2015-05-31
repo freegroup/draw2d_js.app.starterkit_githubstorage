@@ -21,7 +21,7 @@
         "bgColor": "#FF9100",
         "color": "#1B1B1B",
         "stroke": 0,
-        "maxFanOut": 1,
+        "maxFanOut": 1000,
         "name": "output0",
         "port": "draw2d.OutputPort",
         "locator": "draw2d.layout.locator.OutputPortLocator"
@@ -54,7 +54,7 @@
         "bgColor": "#FF9100",
         "color": "#1B1B1B",
         "stroke": 0,
-        "maxFanOut": 1,
+        "maxFanOut": 1000,
         "name": "input0",
         "port": "draw2d.InputPort",
         "locator": "draw2d.layout.locator.InputPortLocator"
