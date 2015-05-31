@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c8121d1-f0ac-4d97-a3de-dccb1f3e3f86" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/javascript/RubberConnection.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/javascript/colors.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/javascript/app.js" afterPath="$PROJECT_DIR$/dist/assets/javascript/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/javascript/dependencies.js" afterPath="$PROJECT_DIR$/dist/assets/javascript/dependencies.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/assets/stylesheets/main.css" afterPath="$PROJECT_DIR$/dist/assets/stylesheets/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/javascript/main.js" afterPath="$PROJECT_DIR$/src/assets/javascript/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/less/main.less" afterPath="$PROJECT_DIR$/src/assets/less/main.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="9c8121d1-f0ac-4d97-a3de-dccb1f3e3f86" name="Default" comment="" />
     <ignored path="draw2d_js.app.starterkit_githubstorage.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -138,12 +124,12 @@
         <option value="$PROJECT_DIR$/src/assets/stylesheets/main.less" />
         <option value="$PROJECT_DIR$/dist/assets/stylesheets/main.css" />
         <option value="$PROJECT_DIR$/src/assets/javascript/fraphael.js" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/src/assets/javascript/main.js" />
         <option value="$PROJECT_DIR$/bower.json" />
         <option value="$PROJECT_DIR$/src/assets/javascript/RubberConnection.js" />
         <option value="$PROJECT_DIR$/src/assets/less/main.less" />
         <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
       </list>
     </option>
   </component>
