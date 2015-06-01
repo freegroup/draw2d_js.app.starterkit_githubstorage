@@ -42,6 +42,7 @@ module.exports = function (grunt) {
             },
             application: {
                 src: [
+                    './src/assets/javascript/banner.js',
                     './src/assets/javascript/colors.js',
                     './src/assets/javascript/util.js',
                     './src/assets/javascript/RubberConnection.js',
@@ -79,7 +80,10 @@ module.exports = function (grunt) {
                     compress: false
                 },
                 files: {
-                    "./dist/assets/stylesheets/main.css": "./src/assets/less/main.less"
+                    "./dist/assets/stylesheets/main.css": [
+                        "./src/assets/less/main.less"
+
+                    ]
                 }
             }
         },

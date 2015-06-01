@@ -1,3 +1,4 @@
+
 var colors = [
     {
         "50": "#fde0dc",
@@ -381,6 +382,7 @@ $(window).load(function () {
 
         fetchRepositories();
         $('#githubConnectDialog').modal('hide');
+        $("#sidebar").addClass("connected",1000);
     });
 
     // Button: Commit to GitHub
@@ -420,17 +422,25 @@ $(window).load(function () {
                 content: base64
             };
 
-            currentRepository.contents(currentPath+"/"+ $("#githubFileName").val()).add(config)
+            var fileName = currentPath+"/"+ $("#githubFileName").val();
+
+            if(!fileName.endsWith(".draw2d")){
+                fileName = fileName+".draw2d";
+            }
+
+            currentRepository.contents(fileName).add(config)
                 .then(function(info) {
                     currentLoadedFile  =  {
                         sha    : info.content.sha,
                         path   : info.content.path,
                         content: json
                     };
+
                     // reload the directory display on the left hand side
                     // to show new new created file and the correct sha keys
                     //
                     fetchPathContent(dirname(info.content.path));
+                    loadFile(currentLoadedFile);
                     $('#githubNewFileDialog').modal('hide');
                 });
         });
@@ -441,6 +451,7 @@ $(window).load(function () {
     // init the Draw2D canvas
     //
     canvas = new draw2d.Canvas("gfx_holder");
+    canvas.installEditPolicy(new draw2d.policy.canvas.ShowDotEditPolicy(10,2,"#9090ff"));
     canvas.onDrop = function(droppedDomNode, x, y, shiftKey, ctrlKey)
     {
         var type = $(droppedDomNode).data("shape");
@@ -538,7 +549,7 @@ function fetchPathContent( newPath ){
             '             ..'+
             '         </a>'+
             '         {{#files}}'+
-            '           <a href="#" class="list-group-item githubPath withripple text-nowrap" data-type="{{type}}" data-path="{{currentPath}}{{name}}" data-id="{{id}}" data-sha="{{sha}}">'+
+            '           <a href="#" data-draw2d="{{draw2d}}" class="list-group-item githubPath withripple text-nowrap" data-type="{{type}}" data-path="{{currentPath}}{{name}}" data-id="{{id}}" data-sha="{{sha}}">'+
             '              <small><span class="glyphicon {{icon}}"></span></small>'+
             '              {{{name}}}'+
             '           </a>'+
@@ -552,6 +563,9 @@ function fetchPathContent( newPath ){
             parentPath: parentPath,
             currentPath: currentPath.length===0?currentPath:currentPath+"/",
             files: files,
+            draw2d:function(){
+                 return this.name.endsWith(".draw2d");
+            },
             icon: function(){
                 if(this.name.endsWith(".draw2d")){
                     return "mdi-editor-mode-edit";
@@ -640,6 +654,7 @@ function loadFile(file){
     reader.unmarshal(canvas, file.content);
     canvas.getCommandStack().markSaveLocation();
     $("#githubCommmitButton").show();
+    $("#documentTitle").text(file.path);
 }
 
 

@@ -1,11 +1,20 @@
 @canvasMarginTop : 70px;
+@headerColor: #0288D1;
+@toolbarColor: #039BE5;
 
 * {
   box-sizing: border-box;
 }
 
+body{
+  color:#333;
+  font-family:"RobotoDraft","Roboto", sans-serif;
+  -webkit-font-smoothing:antialiased;
+  line-height:1em
+}
+
 .header-panel {
-  background-color: #009587;
+  background-color: @headerColor;
   height: 144px;
   position: relative;
   z-index: 3;
@@ -61,6 +70,7 @@
 #draw2dObjectPalette{
   margin-left:25%;
   top:@canvasMarginTop;
+  background-color: @toolbarColor;
 }
 
 
@@ -78,3 +88,54 @@
 #githubButton{
   margin-top:100px;
 }
+
+#githubNavigation{
+  padding-top:30px;
+}
+
+#githubCommmitButton img{
+  height:30px;
+
+}
+#githubCommmitButton span{
+  position: relative;
+  top: 3px;
+  left: 5px;
+}
+
+.connected{
+  background-color: green;
+}
+
+body.modal-open #content{
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+#documentTitle{
+  position:absolute;
+  top:10px;
+  right:20px;
+  color:white;
+}
+
+a[data-draw2d="true"]{
+    color: #0288d1;
+    text-decoration: underline;
+}
+
+
+a[data-draw2d="true"]:hover{
+  color: #0288d1;
+  text-decoration: underline;
+}
+
+.connected{
+  background-color:#E0E0E0;
+  color:white;
+}
+
+

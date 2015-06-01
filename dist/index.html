@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
+    <link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
+
     <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="./lib/material/css/roboto.min.css" rel="stylesheet">
     <link href="./lib/material/css/material-fullpalette.min.css" rel="stylesheet">
@@ -22,78 +24,81 @@
 </head>
 
 <body>
-
-<!--
-  # HEADER
-  # The header contains the toolbar and the name of the loaded file
-  #
- -->
-<div class="header-panel shadow-z-2">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-3">
-                <img id="logo" src="assets/images/logo.png">
-            </div>
-            <div class="col-xs-9">
-                <button class="btn btn-info btn-raised"  style="display:none" data-toggle="modal" data-target="#githubCommitDialog" id="githubCommmitButton">
-                    <span>Commit</span>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!--
-  # Content Area
-  #
-  #
--->
-<div class="container-fluid main">
-
-    <div class="row ">
-
-        <nav class="col-xs-3 menu">
-            <div class="list-group" id="githubNavigation">
-                <div class="text-center">
-                    <button class="btn" data-toggle="modal" data-target="#githubConnectDialog" id="githubButton">
-                        <img src="assets/images/octocat.png"><br>
-                        Connect to Github to <br>
-                        save and load files..
-                    </button>
+<div id="content">
+        <!--
+          # HEADER
+          # The header contains the toolbar and the name of the loaded file
+          #
+         -->
+        <div class="header-panel shadow-z-2">
+            <div class="container-fluid">
+                <div class="row" id="banner">
+                    <div class="col-xs-3">
+                        <img id="logo" src="assets/images/logo.png">
                     </div>
-            </div>
-        </nav>
-
-        <div class="pages col-xs-9 shadow-z-2 ">
-
-
-            <div class="navbar navbar-warning navbar-fixed-top" id="draw2dObjectPalette">
-                <div class="container shadow-z-1">
-                    <div class="navbar-collapse collapse navbar-responsive-collapse">
-                        <ul class="nav navbar-nav">
-                            <li><img src="./assets/images/source.png"  data-shape="draw2d.shape.node.Start"    class="palette_node_element draw2d_droppable"></li>
-                            <li><img src="./assets/images/pipe.png"    data-shape="draw2d.shape.node.Between"  class="palette_node_element draw2d_droppable"></li>
-                            <li><img src="./assets/images/sink.png"    data-shape="draw2d.shape.node.End"      class="palette_node_element draw2d_droppable"></li>
-                        </ul>
+                    <div class="col-xs-9">
+                        <button class="btn btn-info btn-raised"  style="display:none" data-toggle="modal" data-target="#githubCommitDialog" id="githubCommmitButton">
+                            <img src="assets/images/octocat.png">
+                            <span>Commit</span>
+                        </button>
                     </div>
+                    <small class="text-right" id="documentTitle">
+
+                    </small>
                 </div>
             </div>
-
-
-            <div onselectstart="javascript:/*IE8 hack*/return false" id="gfx_holder"  style="width:1500px; height:1500px;">
-            </div>
-
         </div>
 
-        <button class="btn btn-fab btn-raised btn-material-red" data-toggle="modal" data-target="#githubNewFileDialog" id="newFileButton">
-            <i class="mdi-content-add"></i>
-        </button>
+
+        <!--
+          # Content Area
+          #
+          #
+        -->
+        <div class="container-fluid main">
+
+            <div class="row ">
+
+                <nav class="col-xs-3 menu" id="sidebar">
+                    <div class="list-group" id="githubNavigation">
+                        <div class="text-center">
+                            <button class="btn" data-toggle="modal" data-target="#githubConnectDialog" id="githubButton">
+                                <img src="assets/images/octocat.png"><br>
+                                Connect to Github to <br>
+                                save and load files..
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="pages col-xs-9 shadow-z-2 ">
+
+                    <div class="navbar navbar-fixed-top" id="draw2dObjectPalette">
+                        <div class="container shadow-z-1">
+                            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                                <ul class="nav navbar-nav">
+                                    <li><img src="./assets/images/source.png"  data-shape="draw2d.shape.node.Start"    class="palette_node_element draw2d_droppable"></li>
+                                    <li><img src="./assets/images/pipe.png"    data-shape="draw2d.shape.node.Between"  class="palette_node_element draw2d_droppable"></li>
+                                    <li><img src="./assets/images/sink.png"    data-shape="draw2d.shape.node.End"      class="palette_node_element draw2d_droppable"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
 
-    </div>
+                    <div onselectstart="javascript:/*IE8 hack*/return false" id="gfx_holder"  style="width:1500px; height:1500px;">
+                    </div>
+
+                </div>
+
+                <button class="btn btn-fab btn-raised btn-material-red" data-toggle="modal" data-target="#githubNewFileDialog" id="newFileButton">
+                    <i class="mdi-content-add"></i>
+                </button>
+
+
+            </div>
+        </div>
 </div>
-
 
 <!--
   # Connect to GITHUB Dialog template
