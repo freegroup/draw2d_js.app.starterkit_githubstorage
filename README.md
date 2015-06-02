@@ -19,7 +19,7 @@ Project build job is done via [Grunt](http://gruntjs.com/)
  
 At the end I'm absolute surprised how easy an WebApp can connect a repository via the GitHub API. Feel free to branch this repository.
 
-See the small screen recoding below (github token isn't valid anymore :-) ) of the end result or use it direct [online](http://freegroup.github.io/ draw2d_js.app.starterkit_githubstorage)
+See the small screen recoding below (github token isn't valid anymore :-) ) of the end result or use it direct [online](http://freegroup.github.io/draw2d_js.app.starterkit_githubstorage)
 
 
 ![Demo](https://raw.githubusercontent.com/freegroup/draw2d_js.app.starterkit_githubstorage/master/github.gif)
