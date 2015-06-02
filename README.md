@@ -1,5 +1,7 @@
 # Use a Github Repository as your JSON backend
 
+(heavily inspired from [Googlespreadsheet as Backend](https://coderwall.com/p/duapqq/use-a-google-spreadsheet-as-your-json-backend) )
+
 When writing a simple web app or prototyping something, you may want a quick and simple way to store, edit and retrieve data.
 
 Let's say you write a simple editor for blog entries or a diagram editor done with a graph lib like draw2d and don't want to build a backend to write, edit and store your data - but you want to conveniently consume this data as JSON - then the Github API helps you with that.
