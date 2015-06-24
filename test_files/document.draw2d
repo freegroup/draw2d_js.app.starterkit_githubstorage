@@ -1,9 +1,25 @@
 [
   {
     "type": "draw2d.shape.composite.Group",
+    "id": "421340d2-2ae9-4e04-c005-f8e346fa7575",
+    "x": 391,
+    "y": 273,
+    "width": 202,
+    "height": 139,
+    "alpha": 1,
+    "userData": {},
+    "cssClass": "draw2d_shape_composite_Group",
+    "ports": [],
+    "bgColor": "none",
+    "color": "none",
+    "stroke": 1,
+    "radius": 2
+  },
+  {
+    "type": "draw2d.shape.composite.Group",
     "id": "21285373-1803-4966-9ad6-f5c49192223f",
-    "x": 206,
-    "y": 109,
+    "x": 391,
+    "y": 273,
     "width": 82,
     "height": 139,
     "alpha": 1,
@@ -17,26 +33,10 @@
     "radius": 2
   },
   {
-    "type": "draw2d.shape.composite.Group",
-    "id": "421340d2-2ae9-4e04-c005-f8e346fa7575",
-    "x": 206,
-    "y": 109,
-    "width": 202,
-    "height": 139,
-    "alpha": 1,
-    "userData": {},
-    "cssClass": "draw2d_shape_composite_Group",
-    "ports": [],
-    "bgColor": "none",
-    "color": "none",
-    "stroke": 1,
-    "radius": 2
-  },
-  {
     "type": "draw2d.shape.basic.Text",
     "id": "cd620cdb-a09b-6823-7d39-812477ebec81",
-    "x": 115,
-    "y": 210,
+    "x": 123,
+    "y": 312,
     "width": 50,
     "height": 24,
     "alpha": 1,
@@ -57,8 +57,8 @@
   {
     "type": "draw2d.shape.basic.Oval",
     "id": "3a9512d3-d6e6-90ab-95a0-77ccbff14683",
-    "x": 208,
-    "y": 109,
+    "x": 393,
+    "y": 273,
     "width": 80,
     "height": 30,
     "alpha": 1,
@@ -74,8 +74,8 @@
   {
     "type": "draw2d.shape.basic.Circle",
     "id": "83d0ad28-669b-5aaf-d82b-ed9565f4d65b",
-    "x": 206,
-    "y": 168,
+    "x": 391,
+    "y": 332,
     "width": 80,
     "height": 80,
     "alpha": 1,
@@ -90,8 +90,8 @@
   {
     "type": "draw2d.shape.basic.Rectangle",
     "id": "6821d30f-d10b-dd62-8a8a-08e2c87f638f",
-    "x": 328,
-    "y": 134,
+    "x": 513,
+    "y": 298,
     "width": 80,
     "height": 40,
     "alpha": 1,
@@ -103,5 +103,38 @@
     "color": "#EA9725",
     "stroke": 1,
     "radius": 1
+  },
+  {
+    "type": "draw2d.shape.node.Start",
+    "id": "698227ce-8b8b-02ad-9aba-58a832c1ad52",
+    "x": 101.25,
+    "y": 161,
+    "width": 50,
+    "height": 50,
+    "alpha": 1,
+    "userData": {},
+    "cssClass": "draw2d_shape_node_Start",
+    "ports": [
+      {
+        "type": "draw2d.OutputPort",
+        "id": "f3325b2a-eaf4-c5ec-d40b-552d21ac9757",
+        "width": 10,
+        "height": 10,
+        "alpha": 0,
+        "userData": {},
+        "cssClass": "draw2d_OutputPort",
+        "bgColor": "#FF9100",
+        "color": "#1B1B1B",
+        "stroke": 0,
+        "maxFanOut": 9007199254740991,
+        "name": "output0",
+        "port": "draw2d.OutputPort",
+        "locator": "draw2d.layout.locator.OutputPortLocator"
+      }
+    ],
+    "bgColor": "#A1887F",
+    "color": "#000000",
+    "stroke": 1,
+    "radius": 0
   }
 ]
