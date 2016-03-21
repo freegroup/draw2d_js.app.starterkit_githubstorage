@@ -1,149 +1,175 @@
 [
   {
-    "type": "draw2d.shape.composite.Jailhouse",
-    "id": "354fa3b9-a834-0221-2009-abc2d6bd8a",
-    "x": 446,
-    "y": 91,
-    "width": 292,
-    "height": 372,
-    "userData": {},
-    "cssClass": "draw2d_shape_composite_Jailhouse",
-    "bgColor": "#F0F0F0",
-    "color": "#333333",
-    "stroke": 1,
+    "type": "shape_designer.figure.PolyRect",
+    "id": "7ce3ba02-0cd3-4d6d-b0c6-9ffcf6ea0626",
+    "x": 318,
+    "y": 201,
+    "width": 51,
+    "height": 83,
     "alpha": 1,
-    "radius": 2
+    "userData": {
+      "name": "Rectangle"
+    },
+    "cssClass": "shape_designer_figure_PolyRect",
+    "ports": [],
+    "bgColor": "#FFFFFF",
+    "color": "#303030",
+    "stroke": 1,
+    "radius": 0,
+    "vertices": [
+      {
+        "x": 318,
+        "y": 201
+      },
+      {
+        "x": 369,
+        "y": 201
+      },
+      {
+        "x": 369,
+        "y": 284
+      },
+      {
+        "x": 318,
+        "y": 284
+      }
+    ],
+    "blur": 0,
+    "filters": [
+      {
+        "name": "shape_designer.filter.PositionFilter"
+      },
+      {
+        "name": "shape_designer.filter.StrokeFilter"
+      },
+      {
+        "name": "shape_designer.filter.FillColorFilter"
+      }
+    ]
   },
   {
-    "type": "draw2d.shape.node.Start",
-    "id": "354fa3b9-a834-0221-2009",
-    "x": 468,
-    "y": 152,
-    "width": 50,
-    "height": 50,
-    "userData": {},
-    "cssClass": "draw2d_shape_node_Start",
-    "composite": "354fa3b9-a834-0221-2009-abc2d6bd8a",
-
-    "bgColor": "#4D90FE",
-    "color": "#000000",
-    "stroke": 1,
+    "type": "shape_designer.figure.ExtPort",
+    "id": "4c0ca110-e0fe-fbd8-2fe3-193738d3a6d1",
+    "x": 313,
+    "y": 211,
+    "width": 10,
+    "height": 10,
     "alpha": 1,
-    "radius": 2
+    "userData": {
+      "name": "Port",
+      "type": "Input",
+      "direction": 3
+    },
+    "cssClass": "shape_designer_figure_ExtPort",
+    "ports": [],
+    "bgColor": "#C02B1D",
+    "color": "#1B1B1B",
+    "stroke": 1,
+    "filters": [
+      {
+        "name": "shape_designer.filter.PositionFilter"
+      },
+      {
+        "name": "shape_designer.filter.PortDirectionFilter"
+      },
+      {
+        "name": "shape_designer.filter.PortTypeFilter"
+      }
+    ]
   },
   {
-    "type": "draw2d.shape.node.End",
-    "id": "eb-5767-8155-c84-14bda7759dc2",
-    "x": 597,
-    "y": 353,
-    "width": 50,
-    "height": 50,
-    "userData": {},
-    "cssClass": "draw2d_shape_node_End",
-    "composite": "354fa3b9-a834-0221-2009-abc2d6bd8a",
-"ports": [
-{
-"type": "draw2d.InputPort",
-"id": "428f9e54-7a63-f74f-a561-c27aed0",
-"width": 10,
-"height": 10,
-"alpha": 1,
-"userData": {},
-"cssClass": "draw2d_InputPort",
-"bgColor": "#4F6870",
-"color": "#1B1B1B",
-"stroke": 1,
-"maxFanOut": 1.7976931348623157e+308,
-"name": "input0",
-"port": "draw2d.InputPort",
-"locator": "draw2d.layout.locator.InputPortLocator"
-}
-],
-    "bgColor": "#4D90FE",
-    "color": "#000000",
-    "stroke": 1,
+    "type": "shape_designer.figure.ExtPort",
+    "id": "b35b9779-8623-791f-9307-46b98787657b",
+    "x": 313,
+    "y": 265.5,
+    "width": 10,
+    "height": 10,
     "alpha": 1,
-    "radius": 2
+    "userData": {
+      "name": "Port",
+      "type": "Input",
+      "direction": 3
+    },
+    "cssClass": "shape_designer_figure_ExtPort",
+    "ports": [],
+    "bgColor": "#C02B1D",
+    "color": "#1B1B1B",
+    "stroke": 1,
+    "filters": [
+      {
+        "name": "shape_designer.filter.PositionFilter"
+      },
+      {
+        "name": "shape_designer.filter.PortDirectionFilter"
+      },
+      {
+        "name": "shape_designer.filter.PortTypeFilter"
+      }
+    ]
   },
   {
-    "type": "draw2d.shape.node.Start",
-    "id": "354-0221-2009-abc2d6bd852a",
-    "x": 113,
-    "y": 321,
-    "width": 50,
-    "height": 50,
-    "userData": {},
-    "cssClass": "draw2d_shape_node_Start",
-    "bgColor": "#4D90FE",
-    "color": "#000000",
-    "stroke": 1,
+    "type": "shape_designer.figure.ExtPort",
+    "id": "522ff989-93de-993c-a2df-68c888551290",
+    "x": 368,
+    "y": 241,
+    "width": 10,
+    "height": 10,
     "alpha": 1,
-    "radius": 2
+    "userData": {
+      "name": "Port",
+      "type": "Output",
+      "direction": 1
+    },
+    "cssClass": "shape_designer_figure_ExtPort",
+    "ports": [],
+    "bgColor": "#C02B1D",
+    "color": "#1B1B1B",
+    "stroke": 1,
+    "filters": [
+      {
+        "name": "shape_designer.filter.PositionFilter"
+      },
+      {
+        "name": "shape_designer.filter.PortDirectionFilter"
+      },
+      {
+        "name": "shape_designer.filter.PortTypeFilter"
+      }
+    ]
   },
   {
-    "type": "draw2d.shape.node.Start",
-    "id": "354fa3b9-a809-abc2d6bd898952a",
-    "x": 125,
-    "y": 97,
-    "width": 50,
-    "height": 50,
-    "userData": {},
-    "cssClass": "draw2d_shape_node_Start",
-    "bgColor": "#4D90FE",
-    "color": "#000000",
-    "stroke": 1,
+    "type": "shape_designer.figure.ExtLabel",
+    "id": "6c194ae8-463b-e3f5-e7cf-107267effc0a",
+    "x": 325,
+    "y": 211,
+    "width": 29.4375,
+    "height": 21,
     "alpha": 1,
-    "radius": 2
-  },
-{
-"type": "draw2d.shape.basic.Polygon",
-"id": "6b19ac35-562b-3902-9483-ec3b9e15c3c9",
-"x": 217,
-"y": 462,
-"width": 100,
-"height": 100,
-"alpha": 1,
-"userData": {},
-"cssClass": "draw2d_shape_basic_Polygon",
-"ports": [],
-"bgColor": "#FFFFFF",
-"color": "#303030",
-"stroke": 1,
-"radius": 15,
-"vertices": [
-{
-"x": 217,
-"y": 462
-},
-{
-"x": 317,
-"y": 462
-},
-{
-"x": 317,
-"y": 562
-}
-]
-},
-  {
-    "type": "draw2d.shape.note.PostIt",
-    "id": "50fdfd73-de60-12ca-cccd-8380ca800692",
-    "x": 20,
-    "y": 20,
-    "width": 299.2833251953125,
-    "height": 49,
-    "userData": {},
-    "cssClass": "draw2d_shape_note_PostIt",
-    "bgColor": "#5B5B5B",
-    "color": "#FFFFFF",
-    "stroke": 1,
-    "alpha": 1,
-    "radius": 5,
-    "text": "Drag&Drop the figures into the gray 'Jailhouse' composite figure.\nOnce the figure is inside the composite it is impossible to move it outside.\nIt works like a real jailhouse",
+    "userData": {
+      "name": "Label"
+    },
+    "cssClass": "shape_designer_figure_ExtLabel",
+    "ports": [],
+    "bgColor": "none",
+    "color": "#1B1B1B",
+    "stroke": 0,
+    "radius": 0,
+    "text": "&",
     "outlineStroke": 0,
     "outlineColor": "none",
-    "fontSize": 14,
-    "fontColor": "#FFFFFF",
-    "fontFamily": null
+    "fontSize": 41,
+    "fontColor": "#080808",
+    "fontFamily": null,
+    "filters": [
+      {
+        "name": "shape_designer.filter.PositionFilter"
+      },
+      {
+        "name": "shape_designer.filter.FontSizeFilter"
+      },
+      {
+        "name": "shape_designer.filter.FontColorFilter"
+      }
+    ]
   }
 ]
