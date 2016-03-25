@@ -2,10 +2,10 @@
   {
     "type": "shape_designer.figure.PolyRect",
     "id": "3c414bc2-3b8b-155f-6acf-4da1e427881d",
-    "x": 250,
-    "y": 96,
-    "width": 140,
-    "height": 134,
+    "x": 309,
+    "y": 224,
+    "width": 105,
+    "height": 100,
     "alpha": 1,
     "angle": 0,
     "userData": {
@@ -20,20 +20,20 @@
     "dasharray": null,
     "vertices": [
       {
-        "x": 250,
-        "y": 96
+        "x": 309,
+        "y": 224
       },
       {
-        "x": 390,
-        "y": 96
+        "x": 414,
+        "y": 224
       },
       {
-        "x": 390,
-        "y": 230
+        "x": 414,
+        "y": 324
       },
       {
-        "x": 250,
-        "y": 230
+        "x": 309,
+        "y": 324
       }
     ],
     "blur": 0,
@@ -52,8 +52,8 @@
   {
     "type": "shape_designer.figure.PolyCircle",
     "id": "a0b901a9-2a71-749e-5ec8-18699936c8b9",
-    "x": 281,
-    "y": 124,
+    "x": 322.5,
+    "y": 235,
     "width": 78,
     "height": 78,
     "alpha": 1,
