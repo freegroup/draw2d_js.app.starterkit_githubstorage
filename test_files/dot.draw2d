@@ -1,0 +1,81 @@
+[
+  {
+    "type": "shape_designer.figure.PolyRect",
+    "id": "3c414bc2-3b8b-155f-6acf-4da1e427881d",
+    "x": 250,
+    "y": 96,
+    "width": 140,
+    "height": 134,
+    "alpha": 1,
+    "angle": 0,
+    "userData": {
+      "name": "Rectangle"
+    },
+    "cssClass": "shape_designer_figure_PolyRect",
+    "ports": [],
+    "bgColor": "#FFFFFF",
+    "color": "#303030",
+    "stroke": 1,
+    "radius": 0,
+    "dasharray": null,
+    "vertices": [
+      {
+        "x": 250,
+        "y": 96
+      },
+      {
+        "x": 390,
+        "y": 96
+      },
+      {
+        "x": 390,
+        "y": 230
+      },
+      {
+        "x": 250,
+        "y": 230
+      }
+    ],
+    "blur": 0,
+    "filters": [
+      {
+        "name": "shape_designer.filter.PositionFilter"
+      },
+      {
+        "name": "shape_designer.filter.StrokeFilter"
+      },
+      {
+        "name": "shape_designer.filter.FillColorFilter"
+      }
+    ]
+  },
+  {
+    "type": "shape_designer.figure.PolyCircle",
+    "id": "a0b901a9-2a71-749e-5ec8-18699936c8b9",
+    "x": 281,
+    "y": 124,
+    "width": 78,
+    "height": 78,
+    "alpha": 1,
+    "angle": 0,
+    "userData": {
+      "name": "Circle"
+    },
+    "cssClass": "shape_designer_figure_PolyCircle",
+    "ports": [],
+    "bgColor": "#95C06A",
+    "color": "#1B1B1B",
+    "stroke": 0,
+    "radius": 0,
+    "dasharray": null,
+    "blur": 0,
+    "filters": [
+      {
+        "name": "shape_designer.filter.PositionFilter"
+      },
+      {
+        "name": "shape_designer.filter.FillColorFilter"
+      }
+    ]
+  }
+]
