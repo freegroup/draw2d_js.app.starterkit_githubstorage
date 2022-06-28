@@ -11,7 +11,7 @@ Used libs (the usual suspects):
 - [jQuery](https://jquery.com/download/) as swiss army knife
 - [Hogan.JS](http://twitter.github.io/hogan.js/) as template engine
 - [Bootstrap](http://getbootstrap.com/) for the UI stuff
-- [Bootstrap Material](https://fezvrasta.github.io/bootstrap-material-design/) as embellishment 
+- [Bootstrap Material](https://mdbootstrap.com/) as embellishment 
 - [Draw2D](http://www.draw2d.org) as diagram lib 
 - [OctokatJS](https://github.com/philschatz/octokat.js) Github API wrapper
 
